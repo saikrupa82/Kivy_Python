@@ -1,16 +1,16 @@
 # Kivy Python
 
 Kivy Designer is Kivy's tool for designing graphical user interfaces (GUIs) from Kivy Widgets. You can compose and customize widgets, and test them. It is completely written in Python using Kivy.
-Requirements:
-    Kivy >= 1.9.1
-    The following Python modules (available via pip):
-        watchdog
-        pygments
-        docutils
-        jedi
-        gitpython
-        six
-        kivy-garden
+Requirements:<br/>
+    Kivy >= 1.9.1<br/>
+    The following Python modules (available via pip):<br/>
+        watchdog<br/>
+        pygments<br/>
+        docutils<br/>
+        jedi<br/>
+        gitpython<br/>
+        six<br/>
+        kivy-garden<br/>
     The XPopup widget from the Kivy garden
 
 ## These are the Output of the Project I have Done
