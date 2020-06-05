@@ -1,0 +1,265 @@
+WindowsManager:
+    LoginWindow:
+    NewUserWindow:
+    PlotWindow:
+
+<LoginWindow>:
+    username:username
+    passw:passw
+    name:"main"
+    Image:
+        source:"Kivy_Photo.jpeg"
+        opicity:0
+        allow_stretch:True
+    FloatLayout:
+        Label:
+            text:'Hello World'
+            font_size: (root.width**2 + root.height**2) / 11**4
+            pos_hint:{'x':0,'y':0.4}
+
+        Label:
+            text:'[b]Welcome[/b].[color=ff0099]Please login.[/color]'
+            markup: True
+            font_size: (root.width**2 + root.height**2) / 13**4
+            pos_hint:{'y':0.20}
+
+        Label:
+            text:'UserName:'
+            size_hint:0.25,0.4
+            pos_hint:{'x':0.20,'y':0.3}
+            font_size:(root.width**2 + root.height**2) / 14**4
+        TextInput:
+            id:username
+            hint_text:'UserName'
+            opicity:0.5
+            size_hint:0.35,0.07
+            pos_hint:{'x':0.5,'y':0.46}
+            multiline:False
+        Label: 
+            size_hint:0.25,0.4
+            pos_hint:{'x':0.20,'y':0.2}
+            text:'PassWord :'
+            font_size:(root.width**2 + root.height**2) / 14**4
+        TextInput:
+            id:passw
+            hint_text:'Password'
+            size_hint:0.35,0.07
+            pos_hint:{'x':0.5,'y':0.37}
+            multiline:False
+            password:True
+        Button:
+            text:"LOGIN"
+            size_hint:0.25,0.10
+            pos_hint:{'x':0.35,'y':0.2}
+            size:100,100
+            on_release:
+                root.Login()                
+        Button:
+            text:"New User? Register Here"
+            size_hint:0.45,0.05
+            pos_hint:{'x':0.25,'y':0.05}
+            on_release:
+                app.root.current="NewUser"
+                root.manager.transition.direction = "right"                
+
+<NewUserWindow>:
+    name:"NewUser"
+    username:username
+    passw:passw
+    phonenumber:phonenumber
+    email_ID:email_ID
+    FloatLayout:
+        Label:
+            text:'[b]Create[/b] [color=FFFF33]An Account[/color]'
+            markup: True
+            font_size: (root.width**2 + root.height**2) / 13**4
+            pos_hint:{'y':0.4}
+
+        Label:
+            text:'UserName:'
+            size_hint:0.25,0.4
+            pos_hint:{'x':0.20,'y':0.5}
+            font_size:(root.width**2 + root.height**2) / 14**4
+        TextInput:
+            id:username
+            hint_text:'UserName'
+            opicity:0.5
+            size_hint:0.35,0.07
+            pos_hint:{'x':0.5,'y':0.66}
+            multiline:False
+        Label: 
+            size_hint:0.25,0.4
+            pos_hint:{'x':0.20,'y':0.4}
+            text:'PassWord :'
+            font_size:(root.width**2 + root.height**2) / 14**4
+        TextInput:
+            id:passw
+            hint_text:'Password'
+            size_hint:0.35,0.07
+            pos_hint:{'x':0.5,'y':0.57}
+            multiline:False
+            password:True
+        Label:
+            text:'PhoneNumber:'
+            size_hint:0.25,0.4
+            pos_hint:{'x':0.20,'y':0.3}
+            font_size:(root.width**2 + root.height**2) / 14**4
+        TextInput:
+            id:phonenumber
+            hint_text:'PhoneNumber'
+            opicity:0.5
+            size_hint:0.35,0.07
+            pos_hint:{'x':0.5,'y':0.46}
+            multiline:False
+        Label:
+            text:'Email ID:'
+            size_hint:0.25,0.4
+            pos_hint:{'x':0.20,'y':0.2}
+            font_size:(root.width**2 + root.height**2) / 14**4
+        TextInput:
+            id:email_ID
+            hint_text:'Email ID'
+            opicity:0.5
+            size_hint:0.35,0.07
+            pos_hint:{'x':0.5,'y':0.35}
+            multiline:False
+        Button:
+            text:"Register"
+            size_hint:0.25,0.10
+            pos_hint:{'x':0.5,'y':0.15}
+            size:100,100 
+            on_release:
+                root.Register()
+                app.root.current="main"
+                root.manager.transition.direction='left'
+        Button:
+            text:"Go Back"
+            size_hint:0.25,0.10
+            pos_hint:{'x':0.25,'y':0.15}
+            on_release:
+                app.root.current="main"
+                root.manager.transition.direction='left'
+<PlotWindow>:
+    name:"PlotInfo"
+    plotno:plotno
+    surno:surno
+    nosy:nosy
+    ownername:ownername
+    remarks:remarks
+    document:document
+    addressofplot:addressofplot
+    buyername:buyername
+    FloatLayout:
+        Label:
+            text:'[b]Plot[/b] [color=4DB3B3]Details[/color]'
+            markup: True
+            font_size: (root.width**2 + root.height**2) / 13**4
+            pos_hint:{'y':0.4}
+
+        Label:
+            text:'Plot No:'
+            size_hint:0.2,0.35
+            pos_hint:{'x':0,'y':0.6}
+            font_size:(root.width**2 + root.height**2) / 14**4
+        TextInput:
+            id:plotno
+            hint_text:'Plot No'
+            opicity:0.5
+            size_hint:0.27,0.06
+            pos_hint:{'x':0.04,'y':0.68}
+            multiline:False
+        Label: 
+            size_hint:0.2,0.35
+            pos_hint:{'x':0.33,'y':0.6}
+            text:'Survey No:'
+            font_size:(root.width**2 + root.height**2) / 14**4
+        TextInput:
+            id:surno
+            hint_text:'Survey No'
+            size_hint:0.27,0.06
+            pos_hint:{'x':0.35,'y':0.68}
+            multiline:False
+        Label:
+            text:' Size of Plot:'
+            size_hint:0.2,0.06
+            pos_hint:{'x':0.64,'y':0.75}
+            font_size:(root.width**2 + root.height**2) / 14**4
+        TextInput:
+            id:nosy
+            hint_text:'No of Square Yards'
+            opicity:0.5
+            size_hint:0.27,0.06
+            pos_hint:{'x':0.66,'y':0.68}
+            multiline:False
+        Label:
+            text:'Owner Name:'
+            size_hint:0.2,0.35
+            pos_hint:{'x':0.04,'y':0.45}
+            font_size:(root.width**2 + root.height**2) / 14**4
+        TextInput:
+            id:ownername
+            hint_text:'Owner Name'
+            size_hint:0.27,0.06
+            pos_hint:{'x':0.04,'y':0.52}
+            multiline:False
+        Label:
+            text:'Document No:'
+            size_hint:0.2,0.35
+            pos_hint:{'x':0.35,'y':0.45}
+            font_size:(root.width**2 + root.height**2) / 14**4
+        TextInput:
+            id:document
+            hint_text:'Document No'
+            size_hint:0.27,0.06
+            pos_hint:{'x':0.35,'y':0.52}
+            multiline:False
+        Label:
+            text:'Dealer Name:'
+            size_hint:0.2,0.35
+            pos_hint:{'x':0.66,'y':0.45}
+            font_size:(root.width**2 + root.height**2) / 14**4
+        TextInput:
+            id:buyername
+            hint_text:'Buyer Name'
+            opicity:0.5
+            size_hint:0.27,0.06
+            pos_hint:{'x':0.66,'y':0.52}
+            multiline:False
+        Label:
+            text:'Address Of Plot:'
+            size_hint:0.2,0.35
+            pos_hint:{'x':0.07,'y':0.25}
+            font_size:(root.width**2 + root.height**2) / 14**4
+        TextInput:
+            id:addressofplot
+            hint_text:'Address of Plot'
+            opicity:0.5
+            size_hint:0.42,0.15
+            pos_hint:{'x':0.05,'y':0.25}
+            multiline:True
+        Label:
+            text:'Remarks:'
+            size_hint:0.2,0.35
+            pos_hint:{'x':0.48,'y':0.25}
+            font_size:(root.width**2 + root.height**2) / 14**4
+        TextInput:
+            id:remarks
+            hint_text:'Extra Information about Land'
+            opicity:0.5
+            size_hint:0.42,0.15
+            pos_hint:{'x':0.51,'y':0.25}
+            multiline:True
+        Button:
+            text:"Submit"
+            size_hint:0.25,0.10
+            pos_hint:{'x':0.5,'y':0.1}
+            size:100,100 
+            on_release:
+                root.PlotDetails()
+
+        Button:
+            text:"Plots Information"
+            size_hint:0.25,0.10
+            pos_hint:{'x':0.25,'y':0.1}
+            on_release:
+                app.root.current="DetailsPlot"

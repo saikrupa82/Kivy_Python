@@ -1,0 +1,1 @@
+Username;Plot Number;Survey Number;Size of the plot;Owner Name;Document Number;Address of the Plot;Buyer Name;Remarks
